@@ -8,13 +8,13 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 9090;
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // Your frontend URL
-    methods: ["POST"], // Optional: restrict to POST if only using contact form
-    credentials: false, // Optional: true if using cookies/auth
+    origin: "http://localhost:3000",
+    methods: ["POST"],
+    credentials: false,
   })
 );
 
