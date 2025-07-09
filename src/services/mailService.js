@@ -1,7 +1,6 @@
 import nodemailer from "nodemailer";
 
 export async function sendContactEmail(fromEmail, messageText) {
-  
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
@@ -13,7 +12,7 @@ export async function sendContactEmail(fromEmail, messageText) {
   return transporter.sendMail({
     from: fromEmail,
     to: process.env.CONTACT_RECEIVER_EMAIL,
-    subject: "New Contact Form Message",
-    text: messageText,
+    subject: `Новое контактное сообщение от: ${fromEmail}`,
+    html: messageText,
   });
 }
